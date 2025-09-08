@@ -1771,12 +1771,48 @@ section,
 ============================ */
 /* Big horizontal background with free-flow text */
 /* Centered About section */
-
-.about-text h3 {
-    margin-top: 2rem;
-    font-weight: 700;
-    font-size: 2.4rem;
+.about-centered {
+    padding: 4rem 0;
+    background: #f8f9fa; /* subtle light background */
 }
+
+    .about-centered .about-image img {
+        max-height: 420px;
+        object-fit: cover;
+    }
+
+    .about-centered h2 {
+        font-weight: 800;
+        color: #dc3545; /* brand red */
+        margin-bottom: 2rem;
+    }
+
+    .about-centered h3 {
+        margin-top: 2rem;
+        font-weight: 700;
+        font-size: 1.4rem;
+    }
+
+    .about-centered p,
+    .about-centered li {
+        font-size: 1.05rem;
+        line-height: 1.75;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-centered .list-unstyled {
+        max-width: 900px;
+        margin: 0 auto 1.5rem;
+        padding-left: 0;
+    }
+
+    .about-centered .tagline {
+        margin-top: 1.5rem;
+        font-style: italic;
+        color: #555;
+    }
 
 .about-hero-banner {
     width: 100%;
@@ -1791,223 +1827,6 @@ section,
         object-position: center; /* shows middle part */
         display: block;
     }
-
-/* ======= About Enhancements ======= */
-.about-hero {
-    min-height: 60vh;
-    display: grid;
-    place-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.about-hero__bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('../img/about-main.png'); /* ✅ correct relative path from assets/css/ */
-    background-size: cover;
-    background-position: center;
-    transform: translateZ(0);
-    will-change: transform;
-    filter: saturate(1.05) contrast(1.05);
-}
-
-
-
-.about-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.15));
-}
-
-.about-hero__content {
-    color: #fff;
-    position: relative;
-    z-index: 2;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    opacity: .75;
-    z-index: 2;
-    font-size: 22px;
-    animation: floatY 2s ease-in-out infinite;
-}
-
-.about-hero__content h1,
-.about-hero__content p,
-.about-hero__content span,
-.about-hero__content a {
-    color: #ffffff; /* bright white for max contrast */
-    text-shadow: 0 2px 6px rgba(0,0,0,0.6); /* subtle glow so text stays readable */
-}
-
-.about-hero__content h1 {
-    font-weight: 900; /* make heading bold */
-    letter-spacing: 1px; /* slight spacing for clarity */
-}
-
-.about-hero__content p {
-    font-size: 1.2rem;
-    font-weight: 500;
-    opacity: 0.95; /* slightly less transparent */
-}
-@keyframes floatY {
-    0% {
-        transform: translate(-50%,0)
-    }
-
-    50% {
-        transform: translate(-50%,-8px)
-    }
-
-    100% {
-        transform: translate(-50%,0)
-    }
-}
-/* ===== Our Mission section ===== */
-.mission-section {
-    background: #fdecec; /* light red */
-    padding: 60px 20px;
-    border-radius: 12px; /* optional: soften corners */
-    max-width: 1100px;
-    margin: 40px auto;
-    text-align: center;
-}
-
-    .mission-section h2 {
-        font-size: 2.4rem;
-        margin-bottom: 20px;
-        font-weight:700;
-        color: #a10010; /* brand red for the heading */
-    }
-
-    .mission-section p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: #333; /* keep text readable */
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-/* Stats */
-.stats-lite {
-    padding: 60px 0;
-    background: #fff;
-}
-
-    .stats-lite .stat {
-        background: var(--surface-color);
-        border-radius: 16px;
-        padding: 28px 16px;
-        box-shadow: 0 6px 18px rgba(0,0,0,.06);
-    }
-
-    .stats-lite .stat__num {
-        font-size: 2rem;
-        font-weight: 800;
-        color: var(--accent-color);
-        display: block;
-    }
-
-/* Glow cards */
-.glow-card {
-    border: 0;
-    box-shadow: 0 6px 18px rgba(0,0,0,.06);
-    transition: transform .25s ease, box-shadow .25s ease;
-}
-
-    .glow-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 30px rgba(0,0,0,.12);
-    }
-
-/* Masonry Gallery */
-.gallery-masonry .masonry {
-    columns: 1;
-    column-gap: 18px;
-}
-
-.gallery-masonry .masonry-item {
-    break-inside: avoid;
-    display: block;
-    margin-bottom: 18px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-}
-
-    .gallery-masonry .masonry-item img {
-        display: block;
-        width: 100%;
-        height: auto;
-        transition: transform .4s ease;
-    }
-
-    .gallery-masonry .masonry-item:hover img {
-        transform: scale(1.04);
-    }
-
-@media (min-width: 576px) {
-    .gallery-masonry .masonry {
-        columns: 2;
-    }
-}
-
-@media (min-width: 992px) {
-    .gallery-masonry .masonry {
-        columns: 3;
-    }
-}
-
-/* Utility */
-.object-fit-cover {
-    object-fit: cover;
-}
-
-.about-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5));
-}
-/* ===== About/Story: make text area wider ===== */
-
-/* expand the outer container a bit */
-.about-page .container,
-.about-page .container-lg,
-.about-page .container-xl,
-.about-page .container-xxl {
-    max-width: 1320px !important;
-}
-
-/* widen the prose block itself (most pages use .svs-wide / about-section) */
-.about-page .svs-wide,
-.about-page .about-section,
-.about-page section[id*="about"],
-.about-page section[id*="story"],
-.svs-wide.about-wide { /* safety hook if you can add this class */
-    max-width: 1200px !important; /* <- increase or decrease to taste */
-    width: 100%;
-    margin: 0 auto !important;
-    padding-inline: clamp(16px, 4vw, 48px);
-}
-
-    /* keep headings centered but make paragraphs read wider & left aligned */
-    .about-page .svs-wide p,
-    .about-page .about-section p,
-    .about-page section[id*="about"] p,
-    .about-page section[id*="story"] p {
-        text-align: left;
-        line-height: 1.75;
-        font-size: 1.05rem;
-    }
-
 
 
 /*--------------------------------------------------------------
@@ -2467,3 +2286,56 @@ section,
     color: #ffffff; /* keep readable on gradient */
     font-weight: 400;
 }
+
+
+/* ======= About Enhancements ======= */
+.about-hero {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.about-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/img/about-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: translateZ(0);
+  will-change: transform;
+  filter: saturate(1.05) contrast(1.05);
+}
+.about-hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.15));
+}
+.about-hero__content { color: #fff; position: relative; z-index: 2; }
+.scroll-indicator{
+  position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+  color: #fff; opacity: .75; z-index: 2; font-size: 22px;
+  animation: floatY 2s ease-in-out infinite;
+}
+@keyframes floatY { 0% { transform: translate(-50%,0)} 50%{ transform: translate(-50%,-8px)} 100%{ transform: translate(-50%,0)} }
+
+/* Stats */
+.stats-lite { padding: 60px 0; background: #fff; }
+.stats-lite .stat { background: var(--surface-color); border-radius: 16px; padding: 28px 16px; box-shadow: 0 6px 18px rgba(0,0,0,.06); }
+.stats-lite .stat__num { font-size: 2rem; font-weight: 800; color: var(--accent-color); display: block; }
+
+/* Glow cards */
+.glow-card { border: 0; box-shadow: 0 6px 18px rgba(0,0,0,.06); transition: transform .25s ease, box-shadow .25s ease; }
+.glow-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,.12); }
+
+/* Masonry Gallery */
+.gallery-masonry .masonry { columns: 1; column-gap: 18px; }
+.gallery-masonry .masonry-item { break-inside: avoid; display: block; margin-bottom: 18px; position: relative; overflow: hidden; border-radius: 12px; }
+.gallery-masonry .masonry-item img { display: block; width: 100%; height: auto; transition: transform .4s ease; }
+.gallery-masonry .masonry-item:hover img { transform: scale(1.04); }
+@media (min-width: 576px) { .gallery-masonry .masonry { columns: 2; } }
+@media (min-width: 992px) { .gallery-masonry .masonry { columns: 3; } }
+
+/* Utility */
+.object-fit-cover { object-fit: cover; }
